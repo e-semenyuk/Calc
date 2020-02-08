@@ -29,11 +29,8 @@ namespace Calc
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            kernel.Get<LaunchPresenter>().Run("");
+            kernel.Get<LaunchPresenter>().Run();
             Application.Run(kernel.Get<ApplicationContext>());
-/*            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());*/
         }
     }
 }

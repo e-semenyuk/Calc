@@ -21,16 +21,10 @@ namespace Calc
 
         double[] values;
         string initValues;
-        public Form2( ApplicationContext context)
+        public Form2(ApplicationContext context)
         {
             _context = context;
             InitializeComponent();
-            string data = GetInitialValues?.Invoke();
-
-            values = initValues.Split(' ').Select(Double.Parse).ToArray();
-
-            label1.Text = string.Join("; ", values);
-            listBox1.Items.Add(label1.Text);
         }
 
 /*        class Factorial
@@ -50,15 +44,10 @@ namespace Calc
         public void button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            //CalcService cs = new CalcService();
-            //CalcPresenter cp = new CalcPresenter(this, cs);
-            //cp.Calculate(values, Convert.ToDouble(textBox1.Text), button.Text);
+
 
             Calculate?.Invoke(values, Convert.ToDouble(textBox1.Text), button.Text);
-
-            //cs.StringValues = "123";
             string x = GetValues?.Invoke();
-            //string x = cp.GetValues();
             listBox1.Items.Add(x);
 
             #region
@@ -257,9 +246,13 @@ namespace Calc
         {
             MessageBox.Show(message);
         }
-        public new void Show(string s)
+        public new void Show()
         {
-            initValues = s;
+            this.initValues = GetInitialValues?.Invoke();
+            this.values = initValues.Split(' ').Select(Double.Parse).ToArray();
+
+            label1.Text = string.Join("; ", values);
+            listBox1.Items.Add(label1.Text);
             _context.MainForm = this;
             base.Show();
         }

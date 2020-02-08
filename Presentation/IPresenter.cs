@@ -8,6 +8,6 @@ namespace Presentation
 {
     public interface IPresenter
     {
-        void Run(String s);
+        void Run();
     }
 }

@@ -23,14 +23,14 @@ namespace Presentation
         }
         public void Launch(string values)
         {
-           // _service.SetIniticalValues(values);
+            _service.InitialValues = values;
 
-            _kernel.Get<CalcPresenter>().Run(values);
+            _kernel.Get<CalcPresenter>().Run();
             _view.Close();
         }
-        public void Run(string s)
+        public void Run()
         {
-            _view.Show(s);
+            _view.Show();
         }
     }
 }

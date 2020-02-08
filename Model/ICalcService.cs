@@ -8,11 +8,10 @@ namespace Model
 {
     public interface ICalcService
     {
-        string InitianlValues { get; set; }
+        string InitialValues { get; set; }
         string StringValues { get; set; }
         double[] Values { get; set; }
         void Calculate(double[] values, double value, string operation);
         void ConvertToString();
-        void SetIniticalValues(string values);
     }
 }

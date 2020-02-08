@@ -24,10 +24,10 @@ namespace Calc
         {
             if (textBox1.Text != "")
             {
-                Launch?.Invoke(this.textBox1.Text);
+                Launch?.Invoke(textBox1.Text);
             }
         }
-        public new void Show(string s)
+        public new void Show()
         {
             _context.MainForm = this;
             base.Show();

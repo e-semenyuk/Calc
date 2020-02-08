@@ -8,7 +8,7 @@ namespace Model
 {
     public class CalcService : ICalcService
     {
-        public string InitianlValues { get; set; }
+        public string InitialValues { get; set; }
         public string StringValues { get; set; }
         public double[] Values { get; set; }
         public void Calculate(double[] values, double value, string operation)
@@ -43,10 +43,6 @@ namespace Model
                 n = n - 1;
             }
             return res;
-        }
-        public void SetIniticalValues(string values)
-        {
-            InitianlValues = values;
         }
     }
 }

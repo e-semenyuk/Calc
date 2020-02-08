@@ -31,11 +31,11 @@ namespace Presentation
         }
         public string GetInitialValues()
         {
-            return _service.InitianlValues;
+            return _service.InitialValues;
         }
-        public void Run(string values)
+        public void Run()
         {
-            _view.Show(values);
+            _view.Show();
         }
     }
 }
